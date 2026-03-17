@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const routes = require('./routes');
 const authRoutes = require('./routes/authRoutes');
+const batchRoutes = require('./routes/batchRoutes');
 const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
@@ -12,6 +13,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/batches', batchRoutes);
 app.use('/', routes);
 
 // Error Handling Middleware
